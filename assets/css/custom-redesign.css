@@ -1,0 +1,498 @@
+:root {
+  --luka-bg: #fbfaf7;
+  --luka-text: #2f332c;
+  --luka-accent: #9d5b3f;
+  --luka-secondary: #6f7468;
+  --luka-border: rgba(128, 93, 68, 0.18);
+  --luka-shadow: rgba(83, 61, 44, 0.12);
+  --luka-social-bg: #ffffff;
+  --luka-social-text: #6d7665;
+  --paper-surface: rgba(255, 255, 255, 0.78);
+  --paper-surface-strong: #ffffff;
+  --paper-wash: rgba(94, 117, 91, 0.08);
+  --paper-rule: rgba(157, 91, 63, 0.28);
+}
+
+[data-theme="dark"] {
+  --luka-bg: #171814;
+  --luka-text: #e6e1d7;
+  --luka-accent: #d69874;
+  --luka-secondary: #b2ab9d;
+  --luka-border: rgba(214, 152, 116, 0.22);
+  --luka-shadow: rgba(0, 0, 0, 0.34);
+  --luka-social-bg: #24241f;
+  --luka-social-text: #d5cfc2;
+  --paper-surface: rgba(35, 35, 30, 0.74);
+  --paper-surface-strong: #23231e;
+  --paper-wash: rgba(214, 152, 116, 0.09);
+  --paper-rule: rgba(214, 152, 116, 0.34);
+}
+
+body.theme-luka {
+  background:
+    linear-gradient(115deg, rgba(157, 91, 63, 0.06), transparent 34rem),
+    linear-gradient(20deg, rgba(92, 119, 90, 0.08), transparent 42rem),
+    var(--luka-bg);
+  font-family: "Source Sans 3", -apple-system, BlinkMacSystemFont, sans-serif;
+  letter-spacing: 0;
+}
+
+body.theme-luka .nav-left a,
+body.theme-luka .site-name,
+body.theme-luka .section-title {
+  font-family: "Libre Baskerville", Georgia, serif;
+}
+
+body.theme-luka .top-nav {
+  background: color-mix(in srgb, var(--luka-bg) 88%, transparent);
+  backdrop-filter: blur(18px);
+}
+
+body.theme-luka .nav-links a {
+  position: relative;
+  padding: 4px 0;
+  color: color-mix(in srgb, var(--luka-secondary) 88%, var(--luka-text));
+}
+
+body.theme-luka .nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: var(--luka-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.18s ease;
+}
+
+body.theme-luka .nav-links a:hover::after {
+  transform: scaleX(1);
+}
+
+body.theme-luka .image.avatar img {
+  border: 1px solid var(--luka-border);
+}
+
+body.theme-luka .section {
+  margin-bottom: 54px;
+  scroll-margin-top: 92px;
+}
+
+body.theme-luka .section-title {
+  margin-bottom: 22px;
+  border-bottom: 0;
+  color: var(--luka-text);
+  font-size: 24px;
+  letter-spacing: 0;
+}
+
+body.theme-luka .section-title::after {
+  content: "";
+  display: block;
+  width: 76px;
+  height: 3px;
+  margin-top: 10px;
+  background: linear-gradient(90deg, var(--luka-accent), rgba(94, 117, 91, 0.45));
+}
+
+body.theme-luka .section-body {
+  color: var(--luka-secondary);
+}
+
+body.theme-luka #about .section-body p {
+  color: var(--luka-text);
+  font-size: 17px;
+  line-height: 1.82;
+}
+
+body.theme-luka .bullet-list li::marker {
+  color: var(--luka-accent);
+}
+
+body.theme-luka #education .section-body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 760px;
+  padding-left: 18px;
+}
+
+body.theme-luka #education .section-body::before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  bottom: 12px;
+  left: 0;
+  width: 2px;
+  background: linear-gradient(180deg, var(--luka-accent), rgba(94, 117, 91, 0.16));
+}
+
+body.theme-luka #education .card {
+  position: relative;
+  padding: 18px 0 18px 24px;
+  border: 0;
+  border-bottom: 1px solid var(--luka-border);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+body.theme-luka #education .card::before {
+  content: "";
+  position: absolute;
+  left: -23px;
+  top: 38px;
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--luka-bg);
+  border: 2px solid var(--luka-accent);
+  box-shadow: 0 0 0 5px color-mix(in srgb, var(--luka-accent) 12%, transparent);
+}
+
+body.theme-luka .education-item {
+  margin-bottom: 0;
+  align-items: center;
+}
+
+body.theme-luka #education .institution-logo {
+  width: 64px;
+  height: 64px;
+  padding: 7px;
+  border: 1px solid var(--luka-border);
+  border-radius: 999px;
+  background: var(--paper-surface-strong);
+}
+
+body.theme-luka #education .exp-title {
+  font-size: 18px;
+  line-height: 1.3;
+}
+
+body.theme-luka #education .exp-detail,
+body.theme-luka #education .exp-period {
+  font-size: 15px;
+}
+
+body.theme-luka .publications ol.bibliography {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+body.theme-luka .publications ol.bibliography li {
+  position: relative;
+  display: flex;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid var(--luka-border);
+  border-radius: 8px;
+  background: var(--paper-surface-strong);
+  box-shadow: 0 16px 42px var(--luka-shadow);
+}
+
+body.theme-luka .publications ol.bibliography li::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 5px;
+  background: linear-gradient(180deg, var(--luka-accent), rgba(94, 117, 91, 0.7));
+}
+
+body.theme-luka .pub-row {
+  width: 100%;
+  min-height: 100%;
+  padding: 18px 18px 16px 22px;
+}
+
+body.theme-luka .pub-content .title {
+  margin-bottom: 8px;
+  color: var(--luka-text);
+  font-size: 17px;
+  line-height: 1.35;
+  font-weight: 700;
+}
+
+body.theme-luka .pub-content .author {
+  color: var(--luka-secondary);
+  font-size: 15px;
+}
+
+body.theme-luka .pub-content .periodical {
+  color: var(--luka-accent);
+  font-size: 15px;
+}
+
+body.theme-luka .pub-content .links {
+  margin-top: 10px;
+}
+
+body.theme-luka .pub-content .links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 5px 11px;
+  border: 1px solid var(--paper-rule);
+  border-radius: 999px;
+  background: var(--paper-wash);
+  color: var(--luka-accent);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+body.theme-luka .pub-thumb {
+  max-width: none;
+  height: 168px;
+  margin-top: auto;
+  border: 1px solid rgba(128, 93, 68, 0.12);
+  border-radius: 8px;
+  background: var(--paper-wash);
+  box-shadow: none;
+}
+
+body.theme-luka .pub-thumb img {
+  object-fit: contain;
+  padding: 8px;
+}
+
+body.theme-luka .subsection-label {
+  margin-top: 26px !important;
+  color: var(--luka-text);
+  letter-spacing: 0.06em;
+}
+
+body.theme-luka .compact-text,
+body.theme-luka .timeline-summary {
+  color: var(--luka-secondary);
+}
+
+body.theme-luka #experience .section-body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+}
+
+body.theme-luka .timeline-item {
+  position: relative;
+  margin-left: 0;
+  padding: 0 0 34px 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+body.theme-luka .timeline-item::before {
+  content: "";
+  position: absolute;
+  left: 66px;
+  top: 82px;
+  bottom: -28px;
+  width: 1px;
+  background: linear-gradient(180deg, var(--paper-rule), rgba(94, 117, 91, 0.08));
+}
+
+body.theme-luka .timeline-item::after {
+  content: "";
+  position: absolute;
+  left: 61px;
+  top: 72px;
+  width: 11px;
+  height: 11px;
+  border-radius: 999px;
+  background: var(--luka-accent);
+  box-shadow: 0 0 0 6px color-mix(in srgb, var(--luka-accent) 13%, transparent);
+}
+
+body.theme-luka #experience .timeline-item:last-child::before {
+  display: none;
+}
+
+body.theme-luka #experience .experience-item {
+  display: grid;
+  grid-template-columns: 88px minmax(0, 1fr);
+  gap: 24px;
+}
+
+body.theme-luka #experience .institution-logo {
+  width: 72px;
+  height: 72px;
+  padding: 8px;
+  border: 1px solid var(--luka-border);
+  border-radius: 999px;
+  background: var(--paper-surface-strong);
+  box-shadow: 0 10px 28px var(--luka-shadow);
+}
+
+body.theme-luka #experience .experience-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 45%);
+  column-gap: 30px;
+  align-items: start;
+}
+
+body.theme-luka #experience .experience-content > p {
+  grid-column: 1;
+}
+
+body.theme-luka #experience .exp-title {
+  margin-top: -2px;
+  font-size: 20px;
+  line-height: 1.34;
+  text-wrap: balance;
+}
+
+body.theme-luka #experience .exp-detail {
+  font-size: 15px;
+}
+
+body.theme-luka #experience .exp-period {
+  display: inline-flex;
+  width: fit-content;
+  margin-top: 8px;
+  padding: 4px 10px;
+  border: 1px solid var(--paper-rule);
+  border-radius: 999px;
+  background: var(--paper-wash);
+  font-size: 13px;
+}
+
+body.theme-luka #experience .timeline-summary {
+  margin-top: 14px !important;
+  color: color-mix(in srgb, var(--luka-text) 72%, var(--luka-secondary));
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+body.theme-luka .experience-thumb {
+  grid-column: 2;
+  grid-row: 1 / span 6;
+  max-width: none;
+  height: 238px;
+  margin-top: 2px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+body.theme-luka .experience-thumb img {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  border: 1px solid var(--luka-border);
+  border-radius: 8px;
+  background: var(--paper-surface-strong);
+  box-shadow: 0 16px 42px var(--luka-shadow);
+  object-fit: contain;
+}
+
+body.theme-luka .visitor-card {
+  border-radius: 8px;
+  background: var(--paper-surface);
+}
+
+@media (max-width: 1080px) {
+  body.theme-luka .publications ol.bibliography {
+    grid-template-columns: 1fr;
+  }
+
+  body.theme-luka #experience .experience-content {
+    grid-template-columns: 1fr;
+  }
+
+  body.theme-luka .experience-thumb {
+    grid-column: 1;
+    grid-row: auto;
+    max-width: 440px;
+  }
+}
+
+@media (max-width: 640px) {
+  body.theme-luka .nav-container {
+    gap: 8px;
+  }
+
+  body.theme-luka .nav-left a {
+    white-space: nowrap;
+    font-size: 17px;
+  }
+
+  body.theme-luka .section-title {
+    font-size: 22px;
+  }
+
+  body.theme-luka .section {
+    scroll-margin-top: 190px;
+  }
+
+  body.theme-luka .pub-row {
+    padding: 16px 14px 14px 18px;
+  }
+
+  body.theme-luka .pub-thumb {
+    max-width: none;
+    height: 148px;
+  }
+
+  body.theme-luka .nav-links a {
+    font-size: 13px;
+  }
+
+  body.theme-luka #education .section-body {
+    padding-left: 14px;
+  }
+
+  body.theme-luka #education .card {
+    padding-left: 18px;
+  }
+
+  body.theme-luka #education .card::before {
+    left: -19px;
+  }
+
+  body.theme-luka #experience .section-body {
+    gap: 26px;
+  }
+
+  body.theme-luka #experience .experience-item {
+    grid-template-columns: 56px minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  body.theme-luka #experience .institution-logo {
+    width: 48px;
+    height: 48px;
+    padding: 5px;
+  }
+
+  body.theme-luka .timeline-item::before {
+    left: 24px;
+    top: 60px;
+  }
+
+  body.theme-luka .timeline-item::after {
+    left: 20px;
+    top: 55px;
+    width: 9px;
+    height: 9px;
+  }
+
+  body.theme-luka #experience .exp-title {
+    font-size: 17px;
+  }
+
+  body.theme-luka #experience .timeline-summary {
+    font-size: 15px;
+  }
+
+  body.theme-luka .experience-thumb {
+    height: 178px;
+  }
+}

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ProCLIP Paper Search - Zhaoqi Song</title>
+  <meta name="description" content="Search and read ProCLIP, a protein-conditioned multimodal framework for virtual spatial proteomics.">
+  <meta name="keywords" content="ProCLIP, spatial proteomics, spatial transcriptomics, H&E, multimodal AI, Zhaoqi Song">
+  <link rel="icon" href="assets/img/icon.png" type="image/png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Source+Sans+3:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script src="https://kit.fontawesome.com/a860a211d3.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="assets/css/font_sans_serif.css">
+  <link rel="stylesheet" href="assets/css/theme-luka.css">
+  <link rel="stylesheet" href="assets/css/custom-redesign.css">
+  <link rel="stylesheet" href="assets/css/proclip.css">
+</head>
+<body class="theme-luka paper-page">
+  <nav class="top-nav">
+    <div class="nav-container">
+      <div class="nav-left">
+        <a href="index.html">Zhaoqi Song</a>
+      </div>
+      <div class="nav-right">
+        <div class="nav-links">
+          <a href="index.html#about">About</a>
+          <a href="research.html">Research</a>
+          <a href="proclip.html" aria-current="page">ProCLIP</a>
+          <a href="index.html#education">Education</a>
+          <a href="index.html#publications">Publications</a>
+          <a href="index.html#awards">Awards</a>
+        </div>
+        <button id="themeToggle" class="theme-toggle" title="Toggle theme" aria-label="Toggle theme">
+          <i class="fa-solid fa-moon" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="paper-shell">
+    <section class="paper-hero" aria-labelledby="paper-title">
+      <div class="paper-hero-copy">
+        <p class="paper-kicker">Searchable research paper · 2026</p>
+        <h1 id="paper-title">
+          ProCLIP
+          <span>Contrastive Multimodal Prediction of Spatial Proteomics from H&amp;E and Spatial Transcriptomics</span>
+        </h1>
+        <p class="paper-authors">
+          Zhaoqi Song, Lecheng Li, Yuxiang Lin, Zixiang Wang, Huimin Zhang, Mengsha Tong, and Chaoyong Yang
+        </p>
+        <ul class="paper-meta" aria-label="Paper metadata">
+          <li>11 pages</li>
+          <li>Full-text search</li>
+          <li>Spatial proteomics</li>
+          <li>English</li>
+        </ul>
+        <div class="paper-actions">
+          <button class="paper-button paper-button--primary" id="jumpToSearch" type="button">
+            <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+            Search the paper
+          </button>
+          <a class="paper-button" href="assets/docs/ProCLIP.pdf" download>
+            <i class="fa-solid fa-arrow-down" aria-hidden="true"></i>
+            Download PDF
+          </a>
+        </div>
+      </div>
+      <figure class="paper-cover">
+        <img src="assets/img/proclip-cover.png" alt="First page of the ProCLIP paper">
+        <figcaption>Original 11-page manuscript</figcaption>
+      </figure>
+    </section>
+
+    <section class="paper-workspace" id="searchWorkspace" aria-label="Search and read ProCLIP">
+      <aside class="paper-search-panel">
+        <div class="paper-search-head">
+          <h2>Find it in the paper</h2>
+          <p>Search methods, datasets, proteins, results, or authors. Every result links to the original page.</p>
+          <label class="paper-search-wrap">
+            <span class="sr-only">Search the full text of ProCLIP</span>
+            <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+            <input
+              class="paper-search-input"
+              id="paperSearch"
+              type="search"
+              autocomplete="off"
+              placeholder="Try “FiLM”, “FOXP3”, or “CAF”"
+            >
+            <span class="search-shortcut" aria-hidden="true">/</span>
+          </label>
+          <div class="paper-suggestions" aria-label="Suggested searches">
+            <button class="suggestion-chip" type="button" data-query="protein-held-out">protein-held-out</button>
+            <button class="suggestion-chip" type="button" data-query="FiLM">FiLM</button>
+            <button class="suggestion-chip" type="button" data-query="spatial context">spatial context</button>
+            <button class="suggestion-chip" type="button" data-query="CAF">CAF</button>
+          </div>
+          <p class="search-summary" id="searchSummary" role="status" aria-live="polite">Loading the search index…</p>
+        </div>
+        <div class="paper-results" id="paperResults">
+          <div class="paper-loading">Preparing page-level search…</div>
+        </div>
+      </aside>
+
+      <section class="paper-reader" aria-label="PDF reader">
+        <div class="reader-toolbar">
+          <div class="reader-location">
+            <strong id="readerPage">Page 1 of 11</strong>
+            <span id="readerSection">Abstract &amp; Introduction</span>
+          </div>
+          <div class="reader-tools">
+            <button class="reader-tool" id="shareSearch" type="button" title="Copy search link" aria-label="Copy search link">
+              <i class="fa-solid fa-link" aria-hidden="true"></i>
+            </button>
+            <a class="reader-tool" href="assets/docs/ProCLIP.pdf" target="_blank" rel="noopener" title="Open PDF in a new tab" aria-label="Open PDF in a new tab">
+              <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+        <iframe
+          class="paper-frame"
+          id="paperFrame"
+          src="assets/docs/ProCLIP.pdf#page=1&amp;view=FitH"
+          title="ProCLIP PDF reader"
+        ></iframe>
+      </section>
+    </section>
+
+    <aside class="paper-note">
+      <div>
+        <h2>About this reader</h2>
+        <p>The searchable text is extracted page by page from the original PDF. Search links always open the matching source page for verification.</p>
+      </div>
+      <a class="paper-button" href="research.html#virtual-spatial-proteomics">
+        Project background
+        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+      </a>
+    </aside>
+  </main>
+
+  <noscript>
+    <p>This page needs JavaScript for full-text search. You can still <a href="assets/docs/ProCLIP.pdf">open the PDF directly</a>.</p>
+  </noscript>
+
+  <script src="assets/js/proclip-search.js"></script>
+</body>
+</html>

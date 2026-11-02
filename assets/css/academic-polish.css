@@ -183,7 +183,7 @@ body.theme-luka #publications .publications .pub-content .title {
 body.theme-luka #publications .publications .pub-content .author { margin:0 0 5px; font-size:14px; line-height:1.6; }
 body.theme-luka #publications .publications .pub-content .periodical { margin:0; font-size:14px; line-height:1.6; }
 body.theme-luka #publications .publications .publication-preprint .periodical {
-  display:inline-flex; align-items:center; min-height:24px; padding:1px 8px;
+  display:inline-flex; align-items:center; gap:6px; min-height:24px; padding:1px 8px;
   font-size:12px; color:var(--luka-text); background:var(--folio-wash); border-radius:3px;
 }
 body.theme-luka #publications .publications .publication-preprint .periodical em { font-style:normal; }
